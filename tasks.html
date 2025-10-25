@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>やることリスト</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">そうぞくガイド</div>
+    <button class="menu-btn">&#9776;</button>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="#">ホーム</a> &gt; <span>やることリスト</span>
+  </div>
+
+  <div class="task-page">
+    <h1>あなたのやることリスト</h1>
+    <p style="text-align:center; margin-bottom:1rem;">診断結果に基づき、相続手続きの期限や主な手続き先を確認できます。</p>
+
+    <!-- フィルター -->
+    <div class="filters">
+      <div class="filter-item">
+        <label for="status-filter">ステータス:</label>
+        <select id="status-filter">
+          <option>すべて</option>
+          <option>未対応のみ</option>
+        </select>
+      </div>
+      <div class="filter-item">
+        <label for="deadline-filter">推奨対応時期:</label>
+        <select id="deadline-filter">
+          <option>すべて</option>
+          <option>14日以内</option>
+          <option>3ヶ月以内</option>
+        </select>
+      </div>
+      <div class="filter-item">
+        <label for="agency-filter">主な手続き先:</label>
+        <select id="agency-filter">
+          <option>すべて</option>
+          <option>市区町村役場</option>
+          <option>銀行</option>
+          <option>契約会社</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- タスクリスト -->
+    <div class="task-list" id="task-list">
+      <!-- JSでタスクを挿入 -->
+    </div>
+  </div>
+
+  <script>
+    // サンプルタスクリスト（診断結果に応じて動的生成することも可能）
+    const tasks = [
+      {
+        title: 'クレジットカードの解約',
+        agency: 'クレジットカード会社',
+        deadline: 'なるべく早め',
+      },
+      {
+        title: 'サブスクリプションの解約・名義変更',
+        agency: '各契約会社',
+        deadline: 'なるべく早め',
+      },
+      {
+        title: '住民税の請求先の変更',
+        agency: '市区町村役場',
+        deadline: '14日以内',
+      },
+      {
+        title: '健康保険資格喪失届の提出',
+        agency: '勤め先',
+        deadline: '14日以内',
+      }
+    ];
+
+    function renderTasks(list) {
+      const container = document.getElementById('task-list');
+      container.innerHTML = '';
+      list.forEach(task => {
+        const card = document.createElement('div');
+        card.className = 'task-card';
+        const info = document.createElement('div');
+        info.className = 'task-info';
+        const title = document.createElement('h3');
+        title.textContent = task.title;
+        const agency = document.createElement('span');
+        agency.textContent = task.agency;
+        info.appendChild(title);
+        info.appendChild(agency);
+        const deadline = document.createElement('div');
+        deadline.className = 'task-deadline';
+        deadline.textContent = task.deadline;
+        card.appendChild(info);
+        card.appendChild(deadline);
+        container.appendChild(card);
+      });
+    }
+
+    // 初期描画
+    document.addEventListener('DOMContentLoaded', () => renderTasks(tasks));
+  </script>
+</body>
+</html>
