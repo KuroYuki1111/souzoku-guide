@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>そうぞく診断</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">そうぞくガイド</div>
+    <button class="menu-btn" aria-label="メニュー">&#9776;</button>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="#">ホーム</a> &gt; <a href="#">そうぞく診断</a> &gt; <span>相続発生後</span>
+  </div>
+
+  <div class="page-bg">
+    <section class="section-title">
+      <h1>そうぞく診断</h1>
+      <div class="page-counter"><span id="current-page">1</span>/3</div>
+      <div class="total-questions">全質問数20問</div>
+      <div class="progress-wrapper"><div id="progress-bar" class="progress-bar"></div></div>
+    </section>
+
+    <div id="question-wrapper" class="question-container">
+      <!-- JavaScriptが質問を挿入 -->
+    </div>
+
+    <div class="nav-buttons">
+      <button id="prev-btn" style="display:none;">戻る</button>
+      <button id="next-btn">次へ</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
