@@ -1,0 +1,200 @@
+/* ------- 基本設定 ------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background: #fef5f9;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ------- ヘッダー ------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.site-header .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d24d79;
+}
+.site-header .menu-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ------- パンくずリスト ------- */
+.breadcrumb {
+  font-size: 0.85rem;
+  margin: 1rem 2rem;
+}
+.breadcrumb a {
+  color: #6d5a8d;
+  text-decoration: none;
+}
+.breadcrumb span {
+  color: #999;
+}
+
+/* ------- 背景装飾 ------- */
+.page-bg {
+  position: relative;
+  padding-top: 2rem;
+}
+.page-bg::before,
+.page-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, #faeaf5 0%, #fff 100%);
+  z-index: -1;
+}
+.page-bg::before { top: 0; opacity: 0.7; }
+.page-bg::after  { top: 120px; opacity: 0.5; }
+
+/* ------- タイトルとプログレス ------- */
+.section-title {
+  text-align: center;
+  margin-top: 1rem;
+}
+.section-title h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #a45ba6;
+}
+.section-title .page-counter {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.section-title .total-questions {
+  font-size: 0.85rem;
+  color: #777;
+}
+.progress-wrapper {
+  width: 70%;
+  max-width: 600px;
+  margin: 0.5rem auto 1.5rem;
+  background: #f1e1f6;
+  border-radius: 20px;
+  height: 20px;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #a45ba6;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+/* ------- 質問フォーム ------- */
+.question-container {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.question-block {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5d2e8; /* 質問間の区切り線 */
+}
+.question-block:last-child {
+  border-bottom: none;
+}
+.question-block h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.question-block .helper {
+  font-size: 0.75rem;
+  color: #a45ba6;
+  margin-bottom: 0.5rem;
+}
+
+/* Q1の数値入力フィールド */
+.date-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+.date-inputs input[type="number"] {
+  width: 90px;
+  padding: 0.45rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* わからないボタン */
+.unknown-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #a45ba6;
+  border-radius: 30px;
+  color: #a45ba6;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+/* ピル型選択肢 */
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.pill {
+  border: 1px solid #a45ba6;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+.pill.selected {
+  background: #e5cbe8;
+  color: #333;
+}
+
+/* ドロップダウン（都道府県など） */
+select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+/* ------- ナビゲーションボタン ------- */
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end; /* 右寄せ */
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+.nav-buttons button {
+  padding: 0.7rem 1.6rem;
+  background: #a45ba6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.nav-buttons button:disabled {
+  background: #ccc;
+  cursor: default;
+}
